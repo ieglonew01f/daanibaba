@@ -7,7 +7,7 @@ class CouponsController < InheritedResources::Base
       d1 = ds[0].split('-')
       d2 = ds[1].split(':')
 
-      release_date_timestamp = Time.new(d1[0].to_i, d1[1].to_i, d1[2].to_i, d2[0].to_i, d2[1].to_i, '+5:30').to_i
+      release_date_timestamp = Time.new(d1[0].to_i, d1[1].to_i, d1[2].to_i, d2[0].to_i, d2[1].to_i, 0, '+05:30').to_i
       current_time_stamp = Time.now.getlocal('+05:30').to_i
 
       date_passed = release_date_timestamp <= current_time_stamp
@@ -25,7 +25,7 @@ class CouponsController < InheritedResources::Base
 
         if !code.empty?
           #destroy the coupon code in db set active = 0
-          coupon.active = 0
+          coupon.first.active = 0
           coupon.save
           render json: {status: 200, coupon: code}
         else
