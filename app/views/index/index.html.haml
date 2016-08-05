@@ -1,0 +1,33 @@
+- content_for :title do
+  Daani Baba | Amazon Gift Cards Give Aways
+- content_for :pagecss do
+  - stylesheet_link_tag "index/baba.index.css"
+- content_for :pagecss do
+  - stylesheet_link_tag "index/baba.index.css"
+- content_for :body do
+  .container
+    .well.well-default
+      %img.animated.infinite.pulse{:src => "/assets/logo.png", :width => "60"}
+      %h1 Daani Baba
+      %h3 Next Gift Card Code Unlocks In
+      %p.timer{"data-countdown" => "#{@coupons_release_date}"}
+      %p
+        .small.hint
+          Psst! Little tip when the counter reaches 0 a button appears, click it to get the coupon code.
+        .wow.hidden
+          %button#get-coupon.btn.btn-primary View Coupon
+          .well-a
+            .well.well-sm.coupon-well.hidden
+      %p
+        .small
+          Whats Next ?
+          %br/
+          This weeks give away Amazon Gift Card Worth 100 INR
+          %br/
+          Next Week give away Amazon Gift Card Worth 500 INR
+      %p
+        /
+          %input.form-control.input-lg{:placeholder => "Email address to recieve gift code, psst! I won't spam/scam you promise"}
+          %button.btn.btn-primary.btn-lg.btn-unlock{"data-token" => "", "hidden" => "true"} Unlock
+- content_for :pagejs do
+  - javascript_include_tag "index/baba.index.js"

@@ -1,0 +1,33 @@
+body {
+    background: #f4f4f4;
+    font-family: Times New Roman;
+    color: #4c4c4c;
+}
+
+.well-default {
+    background: transparent;
+    margin-top: 15%;
+    border: 0;
+    box-shadow: none;
+    text-align: center;
+}
+
+.btn-unlock {
+    font-size: 1.5em;
+    width: 170px;
+}
+
+.timer {
+    font-size: 4em;
+}
+
+.coupon-well {
+    padding: 10px;
+    display: inline-flex;
+    background: transparent;
+    border: 1px dotted #a7a7a7;
+}
+
+.hidden {
+    display: none;
+}
