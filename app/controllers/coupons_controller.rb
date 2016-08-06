@@ -17,7 +17,7 @@ class CouponsController < InheritedResources::Base
         coupon = Coupon.where('active = ?', 1)
 
         if coupon.empty?
-          render json: {status: 500, coupon: 'Internal Server Error ! Sorry please try again later.'}
+          render json: {status: 500, coupon: 'Sorry someone already took the coupon, better luck next time :)'}
           return
         end
 
@@ -26,10 +26,8 @@ class CouponsController < InheritedResources::Base
         if !code.empty?
           #destroy the coupon code in db set active = 0
           coupon.first.active = 0
-          coupon.save
+          coupon.first.save
           render json: {status: 200, coupon: code}
-        else
-          render json: {status: 202, coupon: 'Sorry someone already took the coupon, better luck next time :)'}
         end
       else
         render json: {status: 422, coupon: 'No coupon for you'}
