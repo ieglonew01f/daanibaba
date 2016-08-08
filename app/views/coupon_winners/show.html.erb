@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Coupon:</strong>
+  <%= @coupon_winner.coupon_id %>
+</p>
+
+<p>
+  <strong>Ip:</strong>
+  <%= @coupon_winner.ip %>
+</p>
+
+<%= link_to 'Edit', edit_coupon_winner_path(@coupon_winner) %> |
+<%= link_to 'Back', coupon_winners_path %>

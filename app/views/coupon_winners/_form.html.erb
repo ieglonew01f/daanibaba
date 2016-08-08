@@ -1,0 +1,25 @@
+<%= form_for(@coupon_winner) do |f| %>
+  <% if @coupon_winner.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@coupon_winner.errors.count, "error") %> prohibited this coupon_winner from being saved:</h2>
+
+      <ul>
+      <% @coupon_winner.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :coupon_id %><br>
+    <%= f.number_field :coupon_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ip %><br>
+    <%= f.number_field :ip %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

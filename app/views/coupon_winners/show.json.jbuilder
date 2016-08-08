@@ -1,0 +1,1 @@
+json.partial! "coupon_winners/coupon_winner", coupon_winner: @coupon_winner

@@ -8,26 +8,26 @@
   .container
     .well.well-default
       %img.animated.infinite.pulse{:src => "/assets/logo.png", :width => "60"}
-      %h1 Daani Baba
-      %h3 Next Gift Card Code Unlocks In
+      %h1
+        = raw @site_name
+      %h3
+        = raw @body_header_text
       %p.timer{"data-countdown" => "#{@coupons_release_date}"}
       %p
         .small.hint
-          Psst! Little tip when the counter reaches 0 a button appears, click it to get the coupon code.
+          = @hint_text
         .wow.hidden
           %button#get-coupon.btn.btn-primary View Coupon
           .well-a
             .well.well-sm.coupon-well.hidden
-      %p
-        .small
-          Whats Next ?
-          %br/
-          This weeks give away Amazon Gift Card Worth 100 INR
-          %br/
-          Next Week give away Amazon Gift Card Worth 500 INR
-      %p
-        /
-          %input.form-control.input-lg{:placeholder => "Email address to recieve gift code, psst! I won't spam/scam you promise"}
-          %button.btn.btn-primary.btn-lg.btn-unlock{"data-token" => "", "hidden" => "true"} Unlock
+      .small
+        = raw @footer_news_text
+        
+      .fb-like-btn
+        Like our page to get updates and more
+        %br/
+        #fb-root
+          .fb-like{"data-action" => "like", "data-href" => "https://www.facebook.com/daanibabagiveaways/?fref=ts", "data-layout" => "standard", "data-share" => "true", "data-show-faces" => "true", "data-size" => "small"}
+
 - content_for :pagejs do
   - javascript_include_tag "index/baba.index.js"

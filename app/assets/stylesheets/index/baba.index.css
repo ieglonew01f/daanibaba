@@ -6,7 +6,7 @@ body {
 
 .well-default {
     background: transparent;
-    margin-top: 15%;
+    margin-top: 10%;
     border: 0;
     box-shadow: none;
     text-align: center;
@@ -26,6 +26,15 @@ body {
     display: inline-flex;
     background: transparent;
     border: 1px dotted #a7a7a7;
+}
+
+.fb-like-btn {
+  text-align: left;
+  margin-left: 184px;
+  margin-top: 25px;
+  border-top: 1px solid #d4d4d4;
+  padding-top: 10px;
+  margin-right: 170px;
 }
 
 .hidden {

@@ -27,6 +27,13 @@ class CouponsController < InheritedResources::Base
           #destroy the coupon code in db set active = 0
           coupon.first.active = 0
           coupon.first.save
+
+          #set coupon winner
+          coupon_winner = CouponWinner.new
+          coupon_winner.coupon_id = coupon.first.id
+          coupon_winner.ip = request.remote_ip
+          coupon_winner.save
+
           render json: {status: 200, coupon: code}
         end
       else

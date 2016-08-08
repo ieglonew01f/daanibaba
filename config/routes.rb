@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  #resources :coupon_winners
   #resources :visitors
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
       get 'coupon'
     end
   end
-  resources :users
+  #resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
